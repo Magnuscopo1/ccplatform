@@ -1,0 +1,386 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+
+
+body.auth-wrapper, 
+html {
+    background-color: transparent !important;
+}
+
+/* Make sure your card doesn't have a solid 100% white background */
+.auth-card {
+    background: rgba(255, 255, 255, 0.9) !important; /* 0.9 makes it 90% transparent */
+    backdrop-filter: blur(10px); /* This gives the luxury 'Frosted Glass' look */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+:root {
+    --amazon-dark: #131921;
+    --amazon-light: #232f3e;
+    --amazon-gold: #febd69;
+    --amazon-orange: #f3a847;
+    --bg-gray: #eaeded;
+    --white: #ffffff;
+    --text-main: #111111;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--bg-gray);
+    color: var(--text-main);
+}
+
+/* --- PREMIUM NAVIGATION --- */
+nav {
+    background-color: var(--amazon-dark);
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.logo {
+    color: var(--amazon-gold);
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--amazon-gold);
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    height: 450px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1), var(--bg-gray)), 
+                url('https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?q=80&w=2000');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.hero h1 { font-size: 3.5rem; font-weight: 700; margin-bottom: 10px; }
+.hero p { font-size: 1.2rem; }
+
+/* --- PRODUCT GRID --- */
+.container {
+    max-width: 1300px;
+    margin: -100px auto 50px auto; /* Overlaps Hero for premium look */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 0 20px;
+}
+
+.card {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    height: 50px;
+    overflow: hidden;
+}
+
+.price {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #B12704; /* Amazon Price Red */
+    margin-bottom: 15px;
+}
+
+/* --- BUTTONS --- */
+.btn-cart {
+    background: linear-gradient(to bottom, #f7dfa1, #f0c14b);
+    border: 1px solid #a88734;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #111;
+    transition: 0.2s;
+}
+
+.btn-cart:hover {
+    background: linear-gradient(to bottom, #f5d381, #eeb933);
+    border-color: #9c7e31;
+}
+
+/* --- AUTH FORMS (Login/Signup) --- */
+.auth-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--amazon-dark);
+}
+
+.auth-card {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    width: 380px;
+    box-shadow: 0 10px 50px rgba(0,0,0,0.5);
+}
+
+.auth-card h2 {
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.auth-card input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+.auth-card input:focus {
+    border-color: var(--amazon-orange);
+    box-shadow: 0 0 5px rgba(243, 168, 71, 0.5);
+}
+
+.auth-card button {
+    width: 100%;
+    padding: 12px;
+    background: var(--amazon-gold);
+    border: 1px solid #a88734;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.auth-card p {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.85rem;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--amazon-light);
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* --- Global Styles --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #eaeded; /* Classic Amazon light gray bg */
+    color: #0f1111;
+}
+
+/* --- Navigation Bar --- */
+nav {
+    background-color: #131921; /* Amazon Dark */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 4%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.logo {
+    color: #febd69; /* Amazon Gold */
+    font-size: 24px;
+    font-weight: 800;
+    text-decoration: none;
+    letter-spacing: -1px;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: white;
+}
+
+/* Home Link Styling */
+.nav-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 12px;
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+    border: 1px solid #ffffff;
+    border-radius: 2px;
+    color: #febd69;
+}
+
+/* Logout Link (Special Styling) */
+.logout-link {
+    color: #febd69 !important;
+    font-weight: 700;
+}
+
+.logout-link:hover {
+    background-color: #c40000; /* Subtle red alert for logout */
+    color: white !important;
+    border-color: transparent !important;
+}
+
+/* --- Hero Section --- */
+.hero {
+    height: 400px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3), #eaeded), 
+                url('https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?q=80&w=2000');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin: 0;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+/* --- Product Cards Grid --- */
+.container {
+    max-width: 1300px;
+    margin: -100px auto 50px auto; /* Overlaps the hero for premium look */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain; /* Prevents stretching */
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 10px 0;
+    height: 40px; /* Limits title height */
+    overflow: hidden;
+}
+
+.price {
+    font-size: 22px;
+    font-weight: 700;
+    color: #B12704; /* Classic Amazon Price Red */
+    margin-bottom: 15px;
+}
+
+/* --- Add To Cart Button --- */
+.btn-premium {
+    background: linear-gradient(to bottom, #f7dfa1, #f0c14b);
+    border: 1px solid #a88734;
+    border-radius: 20px; /* Pill shaped like modern Amazon */
+    padding: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    color: #111;
+    transition: 0.2s;
+}
+
+.btn-premium:hover {
+    background: linear-gradient(to bottom, #f5d381, #eeb933);
+    border-color: #9c7e31;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.btn-premium:active {
+    transform: scale(0.98);
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #232f3e; /* Amazon Squid Ink */
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+    margin-top: 50px;
+}
